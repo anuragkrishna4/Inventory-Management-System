@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="sidebar">
+    <h2>Inventory Management System</h2>
+    <ul>
+        <li><a href="#addInventorySection">Add Inventory</a></li>
+        <li><a href="#inventoryActionsSection">Inventory Actions</a></li>
+    </ul>
+</div>
+<div class="main-content">
+    <section id="addInventorySection">
+        <div id="header">
+            <h1>Inventory Dashboard</h1>
+        </div>
+
+        <h2>Add Inventory</h2>
+        <form id="addInventoryForm">
+            <button type="submit" id="btnAddInventory">Add Inventory</button><br />
+            <label for="SKU"></label>
+            <input
+                    type="text"
+                    id="sku_add"
+                    name="sku_name"
+                    required
+                    placeholder="SKU"
+            />
+
+            <label for="product"></label>
+            <input
+                    type="number"
+                    id="product"
+                    name="product_id"
+                    required
+                    placeholder="Product ID"
+            />
+
+            <label for="category"></label>
+            <input
+                    type="number"
+                    id="category"
+                    name="category_id"
+                    required
+                    placeholder="Category ID"
+            />
+
+            <label for="location"></label>
+            <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    required
+                    placeholder="Location"
+            />
+
+            <label for="quantity"></label>
+            <input
+                    type="number"
+                    id="quantity_add"
+                    name="quantity"
+                    required
+                    placeholder="Quantity"
+            />
+        </form>
+    </section>
+    <section id="inventoryActionsSection">
+        <h2>Inventory Actions</h2>
+        <form id="inventoryActionsForm">
+            <label for="action"></label>
+            <select id="action" name="action">
+                <option value="adjustInventory">Adjust Inventory</option>
+                <option value="cancelInventory">Cancel Inventory</option>
+                <option value="allocateInventory">Allocate Inventory for order</option>
+                <option value="reserveInventory">Reserve Inventory for order</option>
+            </select>
+            <label for="SKU"></label>
+            <input
+                    type="text"
+                    id="sku"
+                    name="sku_name"
+                    required
+                    placeholder="SKU"
+            />
+
+            <label for="quantity"></label>
+            <input
+                    type="number"
+                    id="quantity"
+                    name="quantity"
+                    required
+                    placeholder="Quantity"
+            />
+
+            <label for="location"></label>
+            <input
+                    type="text"
+                    id="order"
+                    name="order"
+                    required
+                    placeholder="Order ID (if applicable)"
+            />
+
+            <button type="submit" id="btnApplyAction">Apply Action</button>
+        </form>
+    </section>
+    <br />
+    <section id="inventoryTableSection">
+        <table id="inventoryTable" border="1">
+            <thead>
+            <tr>
+                <th>SKU</th>
+                <th>Product ID</th>
+                <th>Location</th>
+                <th>Available Qty</th>
+                <th>Allocated Qty</th>
+                <th>Reserved Qty</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Inventory rows will go here -->
+            </tbody>
+        </table>
+    </section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
